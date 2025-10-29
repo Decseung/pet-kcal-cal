@@ -1,16 +1,25 @@
-# React + Vite
+# 펫 칼로리 계산기
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+- 프로젝트 목적
 
-Currently, two official plugins are available:
+  - 반려동물에게 하루 필요 열량과 한끼 필요 열량을 계산하여 비율대로 조절하여 칼로리를 조절 할 수 있게 하는 것이 목적
+  - 반려동물에게 직접 제작한 식품을 밥으로 주는 경우 각 들어가는 재료에 따라 비율을 조절 하여 칼로리에 맞춰 비율(g)으로 줄 수 있게 도움을 주는 웹을 제작
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- 필요한 입력 값
 
-## React Compiler
+  - 강아지 / 고양이
+  - 체중
+  - 나이
+  - 중성화 여부
+  - 활동량
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 수정 가능한 값
 
-## Expanding the ESLint configuration
+  - 각 재료
+  - 한끼 칼로리
+  - 하루 칼로리
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- 재료 관련 값
+  - 각 재료 직접 입력 가능
+  - 각 재료 칼로리 직접 입력 가능
+  - 각 재료 총 키로수 / 칼로리로 계산해서 g당 몇 칼로리인지 계산
