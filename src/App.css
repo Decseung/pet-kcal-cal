@@ -1,4 +1,8 @@
-@import url("https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+@font-face {
+  font-family: "memoment";
+  src: url("./assets/font/memomentKkukkkuk.ttf");
+}
+
 * {
   padding: 0px;
   margin: 0px;
@@ -13,7 +17,7 @@
   width: 100vw;
   height: 100vh;
 
-  font-family: "Open Sans", sans-serif;
+  font-family: "memoment", sans-serif;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;

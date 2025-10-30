@@ -1,0 +1,81 @@
+.pet-type {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.pet-type-input-area {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  border: 1px solid #c8c8c8;
+  border-radius: 20px;
+  justify-content: space-between;
+}
+
+.pet-type span {
+  color: #333;
+}
+
+.pet-type-input-area label {
+  width: 55px;
+  height: 35px;
+  display: flex;
+  cursor: pointer;
+  text-align: center;
+  border-radius: 20px;
+  color: #333;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  transition: color 0.5s ease-in-out;
+  font-size: 14px;
+}
+
+.pet-type-input-area label:has(input:checked) {
+  background-color: transparent;
+  color: #fff;
+}
+
+.pet-type-input-area input[type="radio"] {
+  display: none;
+}
+
+.pet-type-input-area input[type="radio"]:checked + label {
+  background: #ddd;
+  color: #000;
+}
+
+.background-toggle {
+  width: 55px;
+  height: 35px;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  border-radius: 20px 0 0 20px;
+  background: #5c0095;
+  transition: left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  animation: borderAnimation 0.5s ease-in-out reverse;
+}
+
+.background-toggle.cat {
+  border-radius: 0px 20px 20px 0px;
+  top: 0px;
+  left: 55px;
+  animation: borderAnimation 0.3s ease-in-out;
+}
+
+@keyframes borderAnimation {
+  0% {
+    border-radius: 20px 0 0 20px;
+  }
+  50% {
+    border-radius: 37.5px;
+  }
+  100% {
+    border-radius: 0 20px 20px 0;
+  }
+}

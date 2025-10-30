@@ -1,0 +1,28 @@
+.dailyamount {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  gap: 5px;
+}
+
+.dailyamount span {
+  color: #333;
+}
+
+.dailyamount-input-area input {
+  width: 55px;
+  border-radius: 30px;
+  text-align: right;
+  padding: 9px;
+  border: 1px solid #c8c8c8;
+}
+
+.dailyamount-input-area input:focus {
+  outline: 2px solid #5c0095;
+}
+
+.dailyamount-input-area span {
+  margin-left: 5px;
+}

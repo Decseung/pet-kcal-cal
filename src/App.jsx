@@ -2,7 +2,7 @@ import { createContext, useContext, useState } from "react";
 
 import "./App.css";
 import Header from "./components/header/header";
-import Main from "./components/header/main/Main";
+import Main from "./components/main/Main";
 
 export const ThemeContext = createContext();
 
