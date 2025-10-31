@@ -17,7 +17,7 @@ function FoodType() {
       <div className="food-type-input-area">
         <div
           className={`background-toggle ${
-            basicInfo.foodType === "dry" ? "dry" : ""
+            basicInfo.foodType === "dry" ? "dry" : basicInfo.foodType === "mix"
           }`}
         ></div>
         <label htmlFor="wet">
