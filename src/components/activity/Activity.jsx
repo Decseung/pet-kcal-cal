@@ -3,10 +3,10 @@ import "./Activity.css";
 import { BasicInfoContext } from "../main/Main";
 
 function Activity() {
-  const { basicInfo, setBaisicInfo } = useContext(BasicInfoContext);
-
+  const { basicInfo, setBasicInfo } = useContext(BasicInfoContext);
+  console.log(basicInfo);
   const handleActivity = (e) => {
-    setBaisicInfo({
+    setBasicInfo({
       ...basicInfo,
       [e.target.name]: e.target.value,
     });

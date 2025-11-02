@@ -61,10 +61,10 @@
   animation: borderAnimation 0.5s ease-in-out reverse;
 }
 
-.background-toggle.dry {
+.background-toggle.mix {
   border-radius: 0px 20px 20px 0px;
   top: 0px;
-  left: 55px;
+  left: 110px;
   animation: borderAnimation 0.3s ease-in-out;
 }
 
@@ -80,7 +80,7 @@
   }
 }
 
-.background-toggle.medium {
+.background-toggle.dry {
   border-radius: 0 0 0 0;
   top: 0px;
   left: 55px;

@@ -13,7 +13,7 @@ export const BasicInfoContext = createContext();
 function Main() {
   const [basicInfo, setBasicInfo] = useState({
     petType: "dog",
-    neutering: false,
+    neutering: "true",
     age: "",
     activity: "high",
     weight: "",

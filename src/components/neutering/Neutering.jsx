@@ -18,7 +18,7 @@ function Neutering() {
       <div className="neutering-input-area">
         <div
           className={`background-toggle ${
-            basicInfo.neutering ? "true" : "false"
+            basicInfo.neutering === "true" ? "true" : "false"
           }`}
         ></div>
         <label htmlFor="neutering">
@@ -28,7 +28,7 @@ function Neutering() {
             id="neutering"
             value="true"
             name="neutering"
-            checked={basicInfo.neutering}
+            checked={basicInfo.neutering === "true"}
             onChange={handleNeuteringInput}
           />
         </label>
@@ -39,7 +39,7 @@ function Neutering() {
             id="not-neutering"
             value="false"
             name="neutering"
-            checked={!basicInfo.neutering}
+            checked={basicInfo.neutering === "false"}
             onChange={handleNeuteringInput}
           />
         </label>

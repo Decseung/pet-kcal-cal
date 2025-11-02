@@ -1,12 +1,12 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext } from "react";
 import "./DailyAmount.css";
 import { BasicInfoContext } from "../main/Main";
 
 function DailyAmount() {
-  const { basicInfo, setbasicInfo } = useContext(BasicInfoContext);
+  const { basicInfo, setBasicInfo } = useContext(BasicInfoContext);
 
   const handleAmount = (e) => {
-    setbasicInfo({
+    setBasicInfo({
       ...basicInfo,
       [e.target.id]: e.target.value,
     });
@@ -16,10 +16,10 @@ function DailyAmount() {
     <div className="dailyamount">
       <span>하루 급여량</span>
       <div className="dailyamount-input-area">
-        <label htmlFor="dailyamount">
+        <label htmlFor="dailyAmount">
           <input
             type="number"
-            id="dailyamount"
+            id="dailyAmount"
             value={basicInfo.dailyAmount}
             onChange={handleAmount}
           />
