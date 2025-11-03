@@ -9,6 +9,7 @@
 
 .dailyamount span {
   color: #333;
+  margin-left: -20px;
 }
 
 .dailyamount-input-area input {

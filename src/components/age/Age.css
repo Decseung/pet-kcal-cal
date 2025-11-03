@@ -9,6 +9,7 @@
 
 .age span {
   color: #333;
+  margin-left: -20px;
 }
 
 .age-input-area input {
@@ -21,4 +22,8 @@
 
 .age-input-area input:focus {
   outline: 2px solid #5c0095;
+}
+
+.age-input-area span {
+  margin-left: 5px;
 }

@@ -7,6 +7,7 @@ import Activity from "../activity/Activity";
 import Weight from "../weight/Weight";
 import DailyAmount from "../dailyamount/DailyAmount";
 import FoodType from "../foodtype/FoodType";
+import SearchFood from "../searchfood/SearchFood";
 
 export const BasicInfoContext = createContext();
 
@@ -36,6 +37,9 @@ function Main() {
             <Weight />
             <DailyAmount />
             <FoodType />
+          </div>
+          <div className="search-food-input-area">
+            <SearchFood />
           </div>
         </BasicInfoContext.Provider>
       </div>

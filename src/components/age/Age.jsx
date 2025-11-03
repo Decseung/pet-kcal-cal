@@ -23,6 +23,7 @@ function Age() {
             value={basicInfo.age}
             onChange={handleAgeInput}
           />
+          <span>세</span>
         </label>
       </div>
     </div>

@@ -23,6 +23,7 @@ function Weight() {
             value={basicInfo.weight}
             onChange={handleWeight}
           />
+          <span>Kg</span>
         </label>
       </div>
     </div>
