@@ -1,4 +1,4 @@
-.neutering {
+.pet-type {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +7,7 @@
   gap: 5px;
 }
 
-.neutering-input-area {
+.pet-type-input-area {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -16,11 +16,11 @@
   justify-content: space-between;
 }
 
-.neutering span {
+.pet-type span {
   color: #333;
 }
 
-.neutering-input-area label {
+.pet-type-input-area label {
   width: 55px;
   height: 35px;
   display: flex;
@@ -35,36 +35,36 @@
   font-size: 14px;
 }
 
-.neutering-input-area label:has(input:checked) {
+.pet-type-input-area label:has(input:checked) {
   background-color: transparent;
   color: #fff;
 }
 
-.neutering-input-area input[type="radio"] {
+.pet-type-input-area input[type="radio"] {
   display: none;
 }
 
-.neutering-input-area input[type="radio"]:checked + label {
+.pet-type-input-area input[type="radio"]:checked + label {
   background: #ddd;
   color: #000;
 }
 
-.background-toggle {
-  width: 55px;
-  height: 35px;
+.pettype-background-toggle {
+  width: 56px;
+  height: 37px;
   position: absolute;
-  top: 0px;
-  left: 0px;
-  border-radius: 20px 0 0 20px;
-  background: #5c0095;
+  top: -1px;
+  left: 55px;
+  border-radius: 0px 20px 20px 0px;
+  background: #6d28d9;
   transition: left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
   animation: borderAnimation 0.5s ease-in-out reverse;
 }
 
-.background-toggle.false {
-  border-radius: 0px 20px 20px 0px;
-  top: 0px;
-  left: 55px;
+.pettype-background-toggle.cat {
+  border-radius: 20px 0px 0px 20px;
+  top: -1px;
+  left: -1px;
   animation: borderAnimation 0.3s ease-in-out;
 }
 

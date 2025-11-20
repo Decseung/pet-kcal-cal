@@ -1,17 +1,12 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import "./Weight.css";
-import { BasicInfoContext } from "../main/Main";
 
 function Weight() {
-  const { basicInfo, setBasicInfo } = useContext(BasicInfoContext);
+  const [weight, setWeight] = useState(0);
 
   const handleWeight = (e) => {
-    setBasicInfo({
-      ...basicInfo,
-      [e.target.id]: e.target.value,
-    });
+    setWeight(Number(e.target.value));
   };
-
   return (
     <div className="weight">
       <span>체중</span>
@@ -20,9 +15,10 @@ function Weight() {
           <input
             type="number"
             id="weight"
-            value={basicInfo.weight}
+            value={Number(weight)}
             onChange={handleWeight}
           />
+          <span>Kg</span>
         </label>
       </div>
     </div>

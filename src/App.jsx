@@ -1,8 +1,8 @@
 import { createContext, useContext, useState } from "react";
 
 import "./App.css";
-import Header from "./components/header/header";
-import Main from "./components/main/Main";
+import Header from "./layouts/header/header.jsx";
+import Main from "./pages/Main/Main.jsx";
 
 export const ThemeContext = createContext();
 

@@ -1,23 +1,20 @@
-import React, { useContext } from "react";
-import { BasicInfoContext } from "../main/Main";
+import React, { useState } from "react";
 import "./FoodType.css";
 
 function FoodType() {
-  const { basicInfo, setBasicInfo } = useContext(BasicInfoContext);
+  const [foodType, setFoodType] = useState("mix");
 
   const handleFoodType = (e) => {
-    setBasicInfo({
-      ...basicInfo,
-      [e.target.name]: e.target.value,
-    });
+    setFoodType(e.target.value);
   };
+
   return (
     <div className="food-type">
       <span>급여 종류</span>
       <div className="food-type-input-area">
         <div
-          className={`background-toggle ${
-            basicInfo.foodType === "dry" ? "dry" : basicInfo.foodType === "mix"
+          className={`foodtype-background-toggle ${
+            foodType === "dry" ? "dry" : foodType === "mix" ? "mix" : "wet"
           }`}
         ></div>
         <label htmlFor="wet">
@@ -27,7 +24,7 @@ function FoodType() {
             id="wet"
             value="wet"
             name="foodType"
-            checked={basicInfo.foodType === "wet"}
+            checked={foodType === "wet"}
             onChange={handleFoodType}
           />
         </label>
@@ -38,7 +35,7 @@ function FoodType() {
             id="dry"
             value="dry"
             name="foodType"
-            checked={basicInfo.foodType === "dry"}
+            checked={foodType === "dry"}
             onChange={handleFoodType}
           />
         </label>
@@ -49,7 +46,7 @@ function FoodType() {
             id="mix"
             value="mix"
             name="foodType"
-            checked={basicInfo.foodType === "mix"}
+            checked={foodType === "mix"}
             onChange={handleFoodType}
           />
         </label>

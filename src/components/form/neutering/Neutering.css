@@ -1,4 +1,4 @@
-.activity {
+.neutering {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -7,7 +7,7 @@
   gap: 5px;
 }
 
-.activity-input-area {
+.neutering-input-area {
   position: relative;
   display: flex;
   flex-direction: row;
@@ -16,11 +16,11 @@
   justify-content: space-between;
 }
 
-.activity span {
+.neutering span {
   color: #333;
 }
 
-.activity-input-area label {
+.neutering-input-area label {
   width: 55px;
   height: 35px;
   display: flex;
@@ -35,36 +35,36 @@
   font-size: 14px;
 }
 
-.activity-input-area label:has(input:checked) {
+.neutering-input-area label:has(input:checked) {
   background-color: transparent;
   color: #fff;
 }
 
-.activity-input-area input[type="radio"] {
+.neutering-input-area input[type="radio"] {
   display: none;
 }
 
-.activity-input-area input[type="radio"]:checked + label {
+.neutering-input-area input[type="radio"]:checked + label {
   background: #ddd;
   color: #000;
 }
 
-.background-toggle {
-  width: 55px;
-  height: 35px;
+.neutering-background-toggle {
+  width: 56px;
+  height: 37px;
   position: absolute;
-  top: 0px;
-  left: 0px;
+  top: -1px;
+  left: -1px;
   border-radius: 20px 0 0 20px;
-  background: #5c0095;
+  background: #6d28d9;
   transition: left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
-  animation: borderAnimation 0.5s ease-in-out reverse;
+  animation: borderAnimation 0.3s ease-in-out reverse;
 }
 
-.background-toggle.low {
+.neutering-background-toggle.false {
   border-radius: 0px 20px 20px 0px;
-  top: 0px;
-  left: 110px;
+  top: -1px;
+  left: 56px;
   animation: borderAnimation 0.3s ease-in-out;
 }
 
@@ -78,10 +78,4 @@
   100% {
     border-radius: 0 20px 20px 0;
   }
-}
-
-.background-toggle.medium {
-  border-radius: 0 0 0 0;
-  top: 0px;
-  left: 55px;
 }

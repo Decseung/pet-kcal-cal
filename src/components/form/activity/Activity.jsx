@@ -1,15 +1,11 @@
-import React, { useContext } from "react";
+import React, { useState } from "react";
 import "./Activity.css";
-import { BasicInfoContext } from "../main/Main";
 
 function Activity() {
-  const { basicInfo, setBaisicInfo } = useContext(BasicInfoContext);
+  const [activity, setAcitivity] = useState("low");
 
   const handleActivity = (e) => {
-    setBaisicInfo({
-      ...basicInfo,
-      [e.target.name]: e.target.value,
-    });
+    setAcitivity(e.target.value);
   };
 
   return (
@@ -17,12 +13,8 @@ function Activity() {
       <span>활동량</span>
       <div className="activity-input-area">
         <div
-          className={`background-toggle ${
-            basicInfo.activity === "high"
-              ? "high"
-              : basicInfo.activity === "low"
-              ? "low"
-              : "medium"
+          className={`activity-background-toggle ${
+            activity === "high" ? "high" : activity === "low" ? "low" : "medium"
           }`}
         ></div>
         <label htmlFor="high-activity">
@@ -32,7 +24,7 @@ function Activity() {
             id="high-activity"
             value="high"
             name="activity"
-            checked={basicInfo.activity === "high"}
+            checked={activity === "high"}
             onChange={handleActivity}
           />
         </label>
@@ -43,7 +35,7 @@ function Activity() {
             id="medium-activity"
             value="medium"
             name="activity"
-            checked={basicInfo.activity === "medium"}
+            checked={activity === "medium"}
             onChange={handleActivity}
           />
         </label>
@@ -54,7 +46,7 @@ function Activity() {
             id="low-activity"
             value="low"
             name="activity"
-            checked={basicInfo.activity === "low"}
+            checked={activity === "low"}
             onChange={handleActivity}
           />
         </label>

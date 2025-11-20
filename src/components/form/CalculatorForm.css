@@ -1,0 +1,69 @@
+.calc-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.first-row-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.first-row-inputs > * {
+  flex: 1 1 calc(25% - 2rem);
+}
+
+/* 태블릿 이하: 2개씩 */
+@media (max-width: 900px) {
+  .first-row-inputs > * {
+    flex: 1 1 calc(50% - 2rem); /* 2개 */
+    margin-top: 20px;
+  }
+}
+
+/* 모바일: 1개씩 */
+@media (max-width: 500px) {
+  .first-row-inputs > * {
+    margin-top: 15px;
+    flex: 1 1 100%; /* 1개 */
+  }
+}
+
+.second-row-inputs {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  margin-top: 20px;
+}
+
+.second-row-inputs > * {
+  flex: 1 1 calc(25% - 2rem);
+}
+
+/* 태블릿 이하: 2개씩 */
+@media (max-width: 900px) {
+  .second-row-inputs > * {
+    flex: 1 1 calc(50% - 2rem); /* 2개 */
+    margin-top: 20px;
+  }
+}
+
+/* 모바일: 1개씩 */
+@media (max-width: 500px) {
+  .second-row-inputs > * {
+    margin-top: 15px;
+    flex: 1 1 100%; /* 1개 */
+  }
+}
+
+.search-section {
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}

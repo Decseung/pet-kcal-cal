@@ -9,6 +9,7 @@
 
 .dailyamount span {
   color: #333;
+  margin-left: -20px;
 }
 
 .dailyamount-input-area input {
@@ -16,11 +17,13 @@
   border-radius: 30px;
   text-align: right;
   padding: 9px;
-  border: 1px solid #c8c8c8;
+  border: 2px solid #c8c8c8;
+  transition: all 0.3s;
 }
 
 .dailyamount-input-area input:focus {
-  outline: 2px solid #5c0095;
+  border: 2px solid #6d28d9;
+  outline: none;
 }
 
 .dailyamount-input-area span {

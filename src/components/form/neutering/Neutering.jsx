@@ -1,15 +1,11 @@
-import React, { useContext, useEffect } from "react";
+import React, { useState } from "react";
 import "./Neutering.css";
-import { BasicInfoContext } from "../main/Main";
 
 function Neutering() {
-  const { basicInfo, setBasicInfo } = useContext(BasicInfoContext);
+  const [neutering, setNeutering] = useState(false);
 
   const handleNeuteringInput = (e) => {
-    setBasicInfo({
-      ...basicInfo,
-      [e.target.name]: e.target.value,
-    });
+    setNeutering((prev) => !prev);
   };
 
   return (
@@ -17,8 +13,8 @@ function Neutering() {
       <span>중성화 여부</span>
       <div className="neutering-input-area">
         <div
-          className={`background-toggle ${
-            basicInfo.neutering ? "true" : "false"
+          className={`neutering-background-toggle ${
+            neutering === true ? "true" : "false"
           }`}
         ></div>
         <label htmlFor="neutering">
@@ -26,9 +22,9 @@ function Neutering() {
           <input
             type="radio"
             id="neutering"
-            value="true"
+            value={true}
             name="neutering"
-            checked={basicInfo.neutering}
+            checked={neutering === true}
             onChange={handleNeuteringInput}
           />
         </label>
@@ -37,9 +33,9 @@ function Neutering() {
           <input
             type="radio"
             id="not-neutering"
-            value="false"
+            value={false}
             name="neutering"
-            checked={!basicInfo.neutering}
+            checked={neutering === false}
             onChange={handleNeuteringInput}
           />
         </label>
