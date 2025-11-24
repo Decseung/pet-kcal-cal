@@ -66,6 +66,7 @@
   top: -1px;
   left: 56px;
   animation: borderAnimation 0.3s ease-in-out;
+  background: #6d28d9;
 }
 
 @keyframes borderAnimation {

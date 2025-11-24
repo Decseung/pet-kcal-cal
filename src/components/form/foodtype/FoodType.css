@@ -61,11 +61,16 @@
   animation: borderAnimation 0.5s ease-in-out reverse;
 }
 
-.background-toggle.mix {
+.foodtype-background-toggle.mix {
+  width: 56px;
+  height: 37px;
   border-radius: 0px 20px 20px 0px;
-  top: 0px;
+  position: absolute;
+  top: -1px;
   left: 110px;
   animation: borderAnimation 0.3s ease-in-out;
+  transition: left 0.5s ease-in-out, border-radius 0.5s ease-in-out;
+  background: #6d28d9;
 }
 
 @keyframes borderAnimation {
@@ -80,7 +85,9 @@
   }
 }
 
-.background-toggle.dry {
+.foodtype-background-toggle.dry {
+  width: 56px;
+  height: 37px;
   border-radius: 0 0 0 0;
   position: absolute;
   top: -1px;

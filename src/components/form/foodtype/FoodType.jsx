@@ -13,12 +13,8 @@ function FoodType() {
       <span>급여 종류</span>
       <div className="food-type-input-area">
         <div
-          className={`background-toggle ${
-            basicInfo.foodType === "dry"
-              ? "dry"
-              : basicInfo.foodType === "mix"
-              ? "mix"
-              : "wet"
+          className={`foodtype-background-toggle ${
+            foodType === "dry" ? "dry" : foodType === "mix" ? "mix" : "wet"
           }`}
         ></div>
         <label htmlFor="wet">

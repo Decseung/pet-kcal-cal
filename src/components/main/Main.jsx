@@ -7,21 +7,9 @@ import Activity from "../activity/Activity";
 import Weight from "../weight/Weight";
 import DailyAmount from "../dailyamount/DailyAmount";
 import FoodType from "../foodtype/FoodType";
-import SearchFood from "../searchfood/SearchFood";
-
-export const BasicInfoContext = createContext();
+import SearchInput from "../searchinput/SearchInput";
 
 function Main() {
-  const [basicInfo, setBasicInfo] = useState({
-    petType: "dog",
-    neutering: "true",
-    age: "",
-    activity: "high",
-    weight: "",
-    dailyAmount: "",
-    foodType: "wet",
-  });
-
   return (
     <main>
       <h3>Pet Food Calculator</h3>
@@ -39,7 +27,7 @@ function Main() {
             <FoodType />
           </div>
           <div className="search-food-input-area">
-            <SearchFood />
+            <SearchInput />
           </div>
         </BasicInfoContext.Provider>
       </div>
