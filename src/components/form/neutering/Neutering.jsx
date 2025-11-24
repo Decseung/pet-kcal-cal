@@ -13,8 +13,8 @@ function Neutering() {
       <span>중성화 여부</span>
       <div className="neutering-input-area">
         <div
-          className={`neutering-background-toggle ${
-            neutering === true ? "true" : "false"
+          className={`background-toggle ${
+            basicInfo.neutering === "true" ? "true" : "false"
           }`}
         ></div>
         <label htmlFor="neutering">
@@ -24,7 +24,7 @@ function Neutering() {
             id="neutering"
             value={true}
             name="neutering"
-            checked={neutering === true}
+            checked={basicInfo.neutering === "true"}
             onChange={handleNeuteringInput}
           />
         </label>
@@ -35,7 +35,7 @@ function Neutering() {
             id="not-neutering"
             value={false}
             name="neutering"
-            checked={neutering === false}
+            checked={basicInfo.neutering === "false"}
             onChange={handleNeuteringInput}
           />
         </label>

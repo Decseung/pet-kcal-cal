@@ -2,10 +2,13 @@ import React, { useState } from "react";
 import "./Activity.css";
 
 function Activity() {
-  const [activity, setAcitivity] = useState("low");
-
+  const { basicInfo, setBasicInfo } = useContext(BasicInfoContext);
+  console.log(basicInfo);
   const handleActivity = (e) => {
-    setAcitivity(e.target.value);
+    setBasicInfo({
+      ...basicInfo,
+      [e.target.name]: e.target.value,
+    });
   };
 
   return (
