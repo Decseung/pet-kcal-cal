@@ -1,5 +1,6 @@
 import React from "react";
 import "./SearchResult.css";
+import { MoveRight } from "lucide-react";
 
 function SearchResult({ data }) {
   console.log(data);
@@ -10,6 +11,13 @@ function SearchResult({ data }) {
         return (
           <div className="food-card" key={item.foodCd}>
             <div className="food-name">{filterFoodName}</div>
+            <div className="kcal-area">
+              <span>1g / kcal</span>
+              <div className="kcal-info">{item.enerc / 100}</div>
+            </div>
+            <div className="enter-arrow">
+              <MoveRight size={18} />
+            </div>
           </div>
         );
       })}

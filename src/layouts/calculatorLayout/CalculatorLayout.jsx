@@ -21,9 +21,9 @@ function CalculatorLayout() {
       </div>
 
       {/* Right Side: Results */}
-      <div className="right-form">
+      <aside className="right-form">
         <CalculatorResult />
-      </div>
+      </aside>
     </div>
   );
 }
