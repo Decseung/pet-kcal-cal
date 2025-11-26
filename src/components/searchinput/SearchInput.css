@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 
-.search-input-area label {
+.search-input-wrap {
   display: flex;
   flex-direction: column;
   position: relative;

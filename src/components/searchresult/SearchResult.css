@@ -1,0 +1,26 @@
+.search-result-area {
+  margin-top: 5px;
+  background-color: #f5f3ff;
+  padding: 0px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  overflow: hidden;
+  max-height: 0px;
+  opacity: 0;
+  transition: max-height 0.3s ease, padding 0.3s ease, opacity 0.2s ease;
+}
+
+.food-card {
+  padding: 8px 12px;
+  display: flex;
+  background-color: #fff;
+  border-radius: 12px;
+}
+
+.open {
+  padding: 12px 6px;
+  max-height: 500px;
+  opacity: 1;
+}

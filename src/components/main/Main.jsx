@@ -14,22 +14,20 @@ function Main() {
     <main>
       <h3>Pet Food Calculator</h3>
       <div className="input-form">
-        <BasicInfoContext.Provider value={{ basicInfo, setBasicInfo }}>
-          <div className="basic-info-area">
-            <PetType />
-            <Neutering />
-            <Age />
-            <Activity />
-          </div>
-          <div className="intermediate-input-area">
-            <Weight />
-            <DailyAmount />
-            <FoodType />
-          </div>
-          <div className="search-food-input-area">
-            <SearchInput />
-          </div>
-        </BasicInfoContext.Provider>
+        <div className="basic-info-area">
+          <PetType />
+          <Neutering />
+          <Age />
+          <Activity />
+        </div>
+        <div className="intermediate-input-area">
+          <Weight />
+          <DailyAmount />
+          <FoodType />
+        </div>
+        <div className="search-food-input-area">
+          <SearchInput />
+        </div>
       </div>
     </main>
   );
