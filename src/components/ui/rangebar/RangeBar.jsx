@@ -6,15 +6,14 @@ function RangeBar({ value, onChange }) {
   const max = 100;
   const percent = ((value - min) / (max - min)) * 100;
 
-  console.log(value);
   return (
     <div className="ratio">
-      <span>{value}%</span>
+      <span>{value || 0}%</span>
       <input
         type="range"
         min={0}
         max={100}
-        value={value}
+        value={value || 0}
         step={1}
         onChange={(e) => onChange(Number(e.target.value))}
         style={{

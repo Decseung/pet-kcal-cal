@@ -74,7 +74,9 @@ function SearchResult({
                 <div className="food-name">
                   {filterFoodName}
                   <span className="food-detail-name">
-                    {`${item.foodLv6Nm} ${item.foodLv7Nm}`}
+                    {`${item.foodLv6Nm === "해당없음" ? "" : item.foodLv6Nm} ${
+                      item.foodLv7Nm
+                    }`}
                   </span>
                 </div>
 
