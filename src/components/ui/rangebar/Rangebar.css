@@ -1,0 +1,40 @@
+.ratio {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 4px;
+}
+
+.ratio span {
+  font-size: 14px;
+}
+
+.ratio input {
+  appearance: none;
+  width: 100%;
+  background-color: #fff;
+  border-radius: 20px;
+  height: 10px;
+}
+
+.ratio input::-webkit-slider-thumb {
+  appearance: none;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #6d28d9;
+  cursor: grab;
+  border: none;
+  transition: transform 0.2s ease;
+  margin-top: -4px;
+}
+
+.ratio input::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+}
+
+.ratio input[type="range"]::-webkit-slider-runnable-track {
+  height: 8px;
+  border-radius: 4px;
+}

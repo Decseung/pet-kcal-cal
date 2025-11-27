@@ -1,10 +1,29 @@
-import React, { useRef } from "react";
+import React, { useRef, useEffect } from "react";
 import "./SearchResult.css";
 import { MoveRight } from "lucide-react";
 import * as RovingFocusGroup from "@radix-ui/react-roving-focus";
 
-function SearchResult({ data, inputRef }) {
+function SearchResult({
+  data,
+  inputRef,
+  setUserData,
+  userData,
+  setFoodName,
+  openResult,
+  setOpenResult,
+}) {
   const rovingRef = useRef(null);
+  const wrapperRef = useRef(null);
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (wrapperRef.current && !wrapperRef.current.contains(e.target)) {
+        setOpenResult(false); // UI만 닫음
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [setOpenResult]);
 
   const handleInputFocus = (e) => {
     if (e.key === "ArrowUp") {
@@ -24,19 +43,41 @@ function SearchResult({ data, inputRef }) {
     }
   };
 
+  const handleKeyDownEnter = (e, item) => {
+    if (e.key === "Enter") {
+      setUserData([...userData, item]);
+      setFoodName("");
+    }
+  };
   return (
     <RovingFocusGroup.Root orientation="vertical" ref={rovingRef}>
-      <div className={`search-result-area ${data ? "open" : ""}`}>
-        {data?.response?.body?.items.map((item, index) => {
-          const filterFoodName = item.foodNm.replaceAll("_", " ");
+      <div
+        className={`search-result-area ${data && openResult ? "open" : ""}`}
+        ref={wrapperRef}
+      >
+        {data?.response?.body?.items.map((item) => {
+          const filterFoodName = item.foodLv4Nm;
           return (
             <RovingFocusGroup.Item key={item.foodCd} asChild>
               <div
                 className="food-card"
                 tabIndex={0}
-                onKeyDown={handleInputFocus}
+                onKeyDown={(e) => {
+                  handleInputFocus(e);
+                  handleKeyDownEnter(e, item);
+                }}
+                onClick={() => {
+                  setUserData([...userData, item]);
+                  setFoodName("");
+                }}
               >
-                <div className="food-name">{filterFoodName}</div>
+                <div className="food-name">
+                  {filterFoodName}
+                  <span className="food-detail-name">
+                    {`${item.foodLv6Nm} ${item.foodLv7Nm}`}
+                  </span>
+                </div>
+
                 <div className="kcal-area">
                   <span>1g / kcal</span>
                   <div className="kcal-info">{item.enerc / 100}</div>

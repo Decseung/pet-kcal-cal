@@ -21,6 +21,7 @@
   width: 95%;
   box-sizing: border-box;
   overflow-x: auto;
+  color: #333;
 }
 
 .search-result-area::-webkit-scrollbar {
@@ -72,6 +73,18 @@
   padding: 12px;
   max-height: 400px;
   opacity: 1;
+}
+
+.food-name {
+  width: 8em;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.food-name span {
+  font-size: 10px;
 }
 
 .kcal-area {
