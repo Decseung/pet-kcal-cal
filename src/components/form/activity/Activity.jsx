@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Activity.css";
+import { useAtom } from "jotai";
+import { formAtom } from "../../../atoms/formAtoms";
+import useFormHandler from "../../../hooks/handleForm";
 
 function Activity() {
-  const [activity, setActivity] = useState("low");
-  const handleActivity = (e) => {
-    setActivity(e.target.value);
-  };
+  const [form] = useAtom(formAtom);
+
+  const { handleFormInput } = useFormHandler();
 
   return (
     <div className="activity">
@@ -13,7 +15,11 @@ function Activity() {
       <div className="activity-input-area">
         <div
           className={`activity-background-toggle ${
-            activity === "high" ? "high" : activity === "low" ? "low" : "medium"
+            form.activity === "high"
+              ? "high"
+              : form.activity === "low"
+              ? "low"
+              : "medium"
           }`}
         ></div>
         <label htmlFor="high-activity">
@@ -23,8 +29,8 @@ function Activity() {
             id="high-activity"
             value="high"
             name="activity"
-            checked={activity === "high"}
-            onChange={handleActivity}
+            checked={form.activity === "high"}
+            onChange={handleFormInput("activity")}
           />
         </label>
         <label htmlFor="medium-activity">
@@ -34,8 +40,8 @@ function Activity() {
             id="medium-activity"
             value="medium"
             name="activity"
-            checked={activity === "medium"}
-            onChange={handleActivity}
+            checked={form.activity === "medium"}
+            onChange={handleFormInput("activity")}
           />
         </label>
         <label htmlFor="low-activity">
@@ -45,8 +51,8 @@ function Activity() {
             id="low-activity"
             value="low"
             name="activity"
-            checked={activity === "low"}
-            onChange={handleActivity}
+            checked={form.activity === "low"}
+            onChange={handleFormInput("activity")}
           />
         </label>
       </div>

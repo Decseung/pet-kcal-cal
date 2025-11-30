@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@radix-ui/react-roving-focus": "^1.1.11",
+    "jotai": "^2.15.1",
     "lucide-react": "^0.554.0",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
