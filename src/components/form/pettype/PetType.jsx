@@ -1,19 +1,20 @@
 import React, { useState } from "react";
 import "./PetType.css";
+import { useAtom } from "jotai";
+import { formAtom } from "../../../atoms/formAtoms";
+import useFormHandler from "../../../hooks/handleForm";
 
 function PetType() {
-  const [petType, setPetType] = useState("dog");
+  const [form] = useAtom(formAtom);
 
-  const handlePetType = (e) => {
-    setPetType(e.target.value);
-  };
+  const { handleFormInput } = useFormHandler();
   return (
     <div className="pet-type">
       <span>반려동물</span>
       <div className="pet-type-input-area">
         <div
           className={`pettype-background-toggle ${
-            petType === "cat" ? "cat" : ""
+            form.petType === "cat" ? "cat" : ""
           }`}
         ></div>
         <label htmlFor="cat">
@@ -23,8 +24,8 @@ function PetType() {
             id="cat"
             value="cat"
             name="petType"
-            checked={petType === "cat"}
-            onChange={handlePetType}
+            checked={form.petType === "cat"}
+            onChange={handleFormInput("petType")}
           />
         </label>
         <label htmlFor="dog">
@@ -34,8 +35,8 @@ function PetType() {
             id="dog"
             value="dog"
             name="petType"
-            checked={petType === "dog"}
-            onChange={handlePetType}
+            checked={form.petType === "dog"}
+            onChange={handleFormInput("petType")}
           />
         </label>
       </div>

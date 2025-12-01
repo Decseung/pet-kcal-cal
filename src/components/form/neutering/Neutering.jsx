@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./Neutering.css";
+import { useAtom } from "jotai";
+import { formAtom } from "../../../atoms/formAtoms";
+import useFormHandler from "../../../hooks/handleForm";
 
 function Neutering() {
-  const [neutering, setNeutering] = useState(false);
+  const [form] = useAtom(formAtom);
 
-  const handleNeuteringInput = (e) => {
-    setNeutering((prev) => !prev);
-  };
+  const { handleFormInput } = useFormHandler();
 
   return (
     <div className="neutering">
@@ -14,7 +15,7 @@ function Neutering() {
       <div className="neutering-input-area">
         <div
           className={`neutering-background-toggle ${
-            neutering === true ? "true" : "false"
+            form.neutering === true ? "true" : "false"
           }`}
         ></div>
         <label htmlFor="neutering">
@@ -24,8 +25,8 @@ function Neutering() {
             id="neutering"
             value={true}
             name="neutering"
-            checked={neutering === true}
-            onChange={handleNeuteringInput}
+            checked={form.neutering === true}
+            onChange={handleFormInput("neutering")}
           />
         </label>
         <label htmlFor="not-neutering">
@@ -35,8 +36,8 @@ function Neutering() {
             id="not-neutering"
             value={false}
             name="neutering"
-            checked={neutering === false}
-            onChange={handleNeuteringInput}
+            checked={form.neutering === false}
+            onChange={handleFormInput("neutering")}
           />
         </label>
       </div>

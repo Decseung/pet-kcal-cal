@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./FoodType.css";
+import { useAtom } from "jotai";
+import { formAtom } from "../../../atoms/formAtoms";
+import useFormHandler from "../../../hooks/handleForm";
 
 function FoodType() {
-  const [foodType, setFoodType] = useState("mix");
+  const [form] = useAtom(formAtom);
 
-  const handleFoodType = (e) => {
-    setFoodType(e.target.value);
-  };
+  const { handleFormInput } = useFormHandler();
 
   return (
     <div className="food-type">
@@ -14,7 +15,11 @@ function FoodType() {
       <div className="food-type-input-area">
         <div
           className={`foodtype-background-toggle ${
-            foodType === "dry" ? "dry" : foodType === "mix" ? "mix" : "wet"
+            form.foodType === "dry"
+              ? "dry"
+              : form.foodType === "mix"
+              ? "mix"
+              : "wet"
           }`}
         ></div>
         <label htmlFor="wet">
@@ -24,8 +29,8 @@ function FoodType() {
             id="wet"
             value="wet"
             name="foodType"
-            checked={foodType === "wet"}
-            onChange={handleFoodType}
+            checked={form.foodType === "wet"}
+            onChange={handleFormInput("foodType")}
           />
         </label>
         <label htmlFor="dry">
@@ -35,8 +40,8 @@ function FoodType() {
             id="dry"
             value="dry"
             name="foodType"
-            checked={foodType === "dry"}
-            onChange={handleFoodType}
+            checked={form.foodType === "dry"}
+            onChange={handleFormInput("foodType")}
           />
         </label>
         <label htmlFor="mix">
@@ -46,8 +51,8 @@ function FoodType() {
             id="mix"
             value="mix"
             name="foodType"
-            checked={foodType === "mix"}
-            onChange={handleFoodType}
+            checked={form.foodType === "mix"}
+            onChange={handleFormInput("foodType")}
           />
         </label>
       </div>

@@ -1,12 +1,13 @@
 import React, { useState } from "react";
 import "./Weight.css";
+import { useAtom } from "jotai";
+import { formAtom } from "../../../atoms/formAtoms";
+import useFormHandler from "../../../hooks/handleForm";
 
 function Weight() {
-  const [weight, setWeight] = useState(0);
+  const [form] = useAtom(formAtom);
 
-  const handleWeight = (e) => {
-    setWeight(Number(e.target.value));
-  };
+  const { handleFormInput } = useFormHandler();
   return (
     <div className="weight">
       <span>체중</span>
@@ -15,8 +16,8 @@ function Weight() {
           <input
             type="number"
             id="weight"
-            value={Number(weight)}
-            onChange={handleWeight}
+            value={Number(form.weight)}
+            onChange={handleFormInput("weight")}
           />
           <span>Kg</span>
         </label>

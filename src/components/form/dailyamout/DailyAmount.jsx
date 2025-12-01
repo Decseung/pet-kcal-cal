@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./DailyAmount.css";
+import { useAtom } from "jotai";
+import { formAtom } from "../../../atoms/formAtoms";
+import useFormHandler from "../../../hooks/handleForm";
 
 function DailyAmout() {
-  const [dailyAmount, setDailyAmount] = useState(0);
-
-  const handleAmount = (e) => {
-    setDailyAmount(Number(e.target.value));
-  };
+  const [form] = useAtom(formAtom);
+  const { handleFormInput } = useFormHandler();
   return (
     <div className="dailyamount">
       <span>하루 급여량</span>
@@ -15,8 +15,8 @@ function DailyAmout() {
           <input
             type="number"
             id="dailyAmount"
-            value={dailyAmount}
-            onChange={handleAmount}
+            value={form.dailyAmount}
+            onChange={handleFormInput("dailyAmount")}
           />
         </label>
         <span>끼</span>
